@@ -16,7 +16,8 @@ public class MyMain {
 
         System.out.print("Укажите действие: ");
         String action = scanner.nextLine();
-        action = scanner.nextLine();
+        action = scanner.nextLine(); //без этого калькулятор не сможет работать, т.к. в функцию выше будет определено
+        //значение из nextDouble для num2
 
         switch (action) {
             case "+":
