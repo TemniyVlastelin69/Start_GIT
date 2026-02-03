@@ -11,6 +11,10 @@ public class HomeWork {
         //setEvenOddNumber ();
         //setTemperatureParameters();
         //setColorRainbow();
+        //enterOddNumbers();
+        //outputNumbers();
+        //getSumNumbers();
+        outputSequence();
 
     }
     public static Scanner input (){
@@ -138,6 +142,67 @@ public class HomeWork {
     инкремента (++).
          */
     public static void enterOddNumbers (){
+        for (int i = 0; i < 100; i++){
+            if (i %2 == 0)
+                continue;
+            System.out.println(i);
+        }
+
+    }
+
+    //Задание 7. Необходимо вывести на экран числа от 5 до 1. При решении используйте операцию декремента (--).
+    public static void outputNumbers (){
+        for (int i = 5; i > 0; i--){
+            System.out.println(i);
+        }
+    }
+
+    /* Задание 8. Напишите программу, где пользователь вводит любое целое положительное число. А программа суммирует
+    все числа от 1 до введенного пользователем числа. Для ввода числа воспользуйтесь классом Scanner.
+         */
+    public static void getSumNumbers (){ //помог AI
+        System.out.print ("Введите целое положительное число больше нуля: ");
+        int num = input().nextInt();
+        int res = 0; //начальное значение результата 0, пока нет совершенных действий по суммированию
+        for (int i = 1; i <= num; i++){
+            /* Пока значение переменной не достигнет числа, которое мы ввели, увеличиваем данную переменную на единицу.
+            Конечный результат получаем путем суммирования нулевого результата с постоянно (пока не достигнем значения
+            введенного числа i<=num (Scanner) ) инкрементируемой переменной и затем выводим на экран сумму.
+                         */
+            res += i;
+        }
+            System.out.println("Сумма значений чисел от 1 до " + num + " равна: " + res);
+    }
+
+    /* Задание 9. Необходимо, чтоб программа выводила на экран вот такую последовательность:
+    7 14 21 28 35 42 49 56 63 70 77 84 91 98.
+    В решении используйте цикл while.
+
+          int iStart = 7; //версия AI
+          int iEnd = 98;
+          while (iStart <= iEnd){
+          System.out.println(iStart);
+          iStart+=7;
+          }
+                */
+    public static void outputSequence(){ //моя версия
+        int i = 7;
+        while (i >= 7 && i <=98){
+            System.out.println(i);
+            i+=7;
+            if (i %7 != 0){
+                continue;
+            } if (i > 98){
+                break;
+            }
+//
+        }
+
+
+    }
+
+    // Задание 10. Вывести 10 первых чисел последовательности 0, -5,-10,-15..
+    public static void outputNewSeq (){
 
     }
 
