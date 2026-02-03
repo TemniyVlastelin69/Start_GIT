@@ -14,7 +14,10 @@ public class HomeWork {
         //enterOddNumbers();
         //outputNumbers();
         //getSumNumbers();
-        outputSequence();
+        //outputSequence();
+        //outputNewSeq();
+        //outputSquareNumbers();
+
 
     }
     public static Scanner input (){
@@ -172,7 +175,7 @@ public class HomeWork {
             res += i;
         }
             System.out.println("Сумма значений чисел от 1 до " + num + " равна: " + res);
-    }
+    }//решено с помощью AI
 
     /* Задание 9. Необходимо, чтоб программа выводила на экран вот такую последовательность:
     7 14 21 28 35 42 49 56 63 70 77 84 91 98.
@@ -202,7 +205,25 @@ public class HomeWork {
     }
 
     // Задание 10. Вывести 10 первых чисел последовательности 0, -5,-10,-15..
-    public static void outputNewSeq (){
+    public static void outputNewSeq (){ //с помощью AI
+        int n = 10; // Количество элементов последовательности
+        for (int i = 0; i < n; i++) { //объявим новую переменную i, которая будет принимать значения из
+            // последовательности и пока 0 <= i < 10 будем увеличивать i на 1 (0,1,2,3,4,5,6,7,8,9)
+
+            int number = i * -5; // объявим новую переменную number, которая будет принимать значения интересующей
+            //последовательности с учетом изменяемого значения i
+
+            System.out.print(number + " ");  // Вывод первых 10 чисел последовательности
+        }
+
+    }//решено с помощью AI
+
+    // Задание 11. Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно.
+    public static void outputSquareNumbers(){
+        for (int i = 10; i <= 20; i++){
+            int res = i * i;
+            System.out.println("Квадрат числа " + i + " равен: " + res);
+        }
 
     }
 
