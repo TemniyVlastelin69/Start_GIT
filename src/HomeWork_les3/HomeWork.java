@@ -1,10 +1,11 @@
 package HomeWork_les3;
 
+import java.net.StandardSocketOptions;
 import java.util.Scanner;
 
 public class HomeWork {
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
         // для проверки Метода убрать обозначение комментария "//"
         //setSeasonsSwitch ();
         //setSeasonsIfElse ();
@@ -17,19 +18,23 @@ public class HomeWork {
         //outputSequence();
         //outputNewSeq();
         //outputSquareNumbers();
+        //outputFibonacсi();
+        //calculateDeposit();
+
 
 
     }
-    public static Scanner input (){
-        return new Scanner (System.in);
+
+    public static Scanner input() {
+        return new Scanner(System.in);
     }
 
     //Задание 1. Написать программу для вывода названия поры года по номеру месяца с применением switch case
     //зима-1,2,12; весна - 3,4,5; лето - 6,7,8; осень - 9,10,11
-    public static void setSeasonsSwitch (){
+    public static void setSeasonsSwitch() {
         System.out.print("Введите числовое значение месяца для определения поры года: ");
         int num = input().nextInt();
-        switch (num){
+        switch (num) {
             case 1:
                 System.out.println("Зима - Winter");
                 break;
@@ -73,7 +78,7 @@ public class HomeWork {
     }
 
     //Задание 2. Написать программу для вывода названия поры года по номеру месяца с применением if-else-if
-    public static void setSeasonsIfElse (){
+    public static void setSeasonsIfElse() {
         System.out.print("Введите числовое значение месяца для определения поры года: ");
         int num = input().nextInt();
         if (num == 1 || num == 2 || num == 12) System.out.println("Зима - Winter");
@@ -87,8 +92,8 @@ public class HomeWork {
     число или нет. Для определения четности числа используйте операцию получения остатка от деления - операция выглядит
     так: '% 2').
          */
-    public static void setEvenOddNumber (){
-        System.out.print ("Введите число для определения его четности: ");
+    public static void setEvenOddNumber() {
+        System.out.print("Введите число для определения его четности: ");
         int num = input().nextInt();
         int res = num % 2;
         if (res == 0) System.out.println("Вы ввели четное число");
@@ -101,8 +106,8 @@ public class HomeWork {
     Если –5>= t > –20, то вывести «Нормально».
     Если –20>= t, то вывести «Холодно».
          */
-    public static void setTemperatureParameters () {
-        System.out.print ("Введите число градусов на улице: ");
+    public static void setTemperatureParameters() {
+        System.out.print("Введите число градусов на улице: ");
         int t = input().nextInt();
         if (t > -5) System.out.println("Тепло");
         else if (t <= -5 && t > -20) System.out.println("Нормально");
@@ -111,10 +116,10 @@ public class HomeWork {
     }
 
     //Задание 5. По введенному номеру определить цвет радуги (1 – красный, 4 – зеленый и т. д.)
-    public static void setColorRainbow (){
-        System.out.print ("Введите число от 1 до 7 для определения цвета радуги: ");
+    public static void setColorRainbow() {
+        System.out.print("Введите число от 1 до 7 для определения цвета радуги: ");
         int num = input().nextInt();
-        switch (num){
+        switch (num) {
             case 1:
                 System.out.println("Числу " + num + " " + "соответствует красный цвет радуги");
                 break;
@@ -144,9 +149,9 @@ public class HomeWork {
     /*Задание 6. При помощи цикла for вывести на экран нечетные числа от 1 до 99. При решении используйте операцию
     инкремента (++).
          */
-    public static void enterOddNumbers (){
-        for (int i = 0; i < 100; i++){
-            if (i %2 == 0)
+    public static void enterOddNumbers() {
+        for (int i = 0; i < 100; i++) {
+            if (i % 2 == 0)
                 continue;
             System.out.println(i);
         }
@@ -154,8 +159,8 @@ public class HomeWork {
     }
 
     //Задание 7. Необходимо вывести на экран числа от 5 до 1. При решении используйте операцию декремента (--).
-    public static void outputNumbers (){
-        for (int i = 5; i > 0; i--){
+    public static void outputNumbers() {
+        for (int i = 5; i > 0; i--) {
             System.out.println(i);
         }
     }
@@ -163,39 +168,40 @@ public class HomeWork {
     /* Задание 8. Напишите программу, где пользователь вводит любое целое положительное число. А программа суммирует
     все числа от 1 до введенного пользователем числа. Для ввода числа воспользуйтесь классом Scanner.
          */
-    public static void getSumNumbers (){ //помог AI
-        System.out.print ("Введите целое положительное число больше нуля: ");
+    public static void getSumNumbers() { //помог AI
+        System.out.print("Введите целое положительное число больше нуля: ");
         int num = input().nextInt();
         int res = 0; //начальное значение результата 0, пока нет совершенных действий по суммированию
-        for (int i = 1; i <= num; i++){
+        for (int i = 1; i <= num; i++) {
             /* Пока значение переменной не достигнет числа, которое мы ввели, увеличиваем данную переменную на единицу.
             Конечный результат получаем путем суммирования нулевого результата с постоянно (пока не достигнем значения
             введенного числа i<=num (Scanner) ) инкрементируемой переменной и затем выводим на экран сумму.
                          */
             res += i;
         }
-            System.out.println("Сумма значений чисел от 1 до " + num + " равна: " + res);
+        System.out.println("Сумма значений чисел от 1 до " + num + " равна: " + res);
     }//решено с помощью AI
 
     /* Задание 9. Необходимо, чтоб программа выводила на экран вот такую последовательность:
     7 14 21 28 35 42 49 56 63 70 77 84 91 98.
     В решении используйте цикл while.
-
-          int iStart = 7; //версия AI
+            ***версия AI***
+          int iStart = 7;
           int iEnd = 98;
           while (iStart <= iEnd){
           System.out.println(iStart);
           iStart+=7;
           }
                 */
-    public static void outputSequence(){ //моя версия
+    public static void outputSequence() { //моя версия
         int i = 7;
-        while (i >= 7 && i <=98){
+        while (i >= 7 && i <= 98) {
             System.out.println(i);
-            i+=7;
-            if (i %7 != 0){
+            i += 7;
+            if (i % 7 != 0) {
                 continue;
-            } if (i > 98){
+            }
+            if (i > 98) {
                 break;
             }
 //
@@ -205,7 +211,7 @@ public class HomeWork {
     }
 
     // Задание 10. Вывести 10 первых чисел последовательности 0, -5,-10,-15..
-    public static void outputNewSeq (){ //с помощью AI
+    public static void outputNewSeq() { //с помощью AI
         int n = 10; // Количество элементов последовательности
         for (int i = 0; i < n; i++) { //объявим новую переменную i, которая будет принимать значения из
             // последовательности и пока 0 <= i < 10 будем увеличивать i на 1 (0,1,2,3,4,5,6,7,8,9)
@@ -219,13 +225,72 @@ public class HomeWork {
     }//решено с помощью AI
 
     // Задание 11. Составьте программу, выводящую на экран квадраты чисел от 10 до 20 включительно.
-    public static void outputSquareNumbers(){
-        for (int i = 10; i <= 20; i++){
+    public static void outputSquareNumbers() {
+        for (int i = 10; i <= 20; i++) {
             int res = i * i;
             System.out.println("Квадрат числа " + i + " равен: " + res);
         }
 
     }
 
+    // Задание 12. Выведите на экран первые 11 членов последовательности Фибоначчи.
+    public static void outputFibonacсi() {
+        //решил только данным примитивным методом, поскольку не смог найти решения через циклы. Были мысли с массивами,
+        // (как оказалось AI также предложил решение через массив) но сам я не смог додумать до конца решение через них.
+            // *** решение данной задачи через AI***
+        /* Количество членов последовательности Фибоначчи
+        int n = 11;
+
+        // Массив для хранения чисел Фибоначчи
+        int[] fibonacci = new int[n];
+
+        // Первые два числа Фибоначчи
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        // Генерация последовательности Фибоначчи
+        for (int i = 2; i < n; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+        // Вывод последовательности
+        for (int num : fibonacci) {
+            System.out.print(num + " ");
+            }
+         */
+        int a, b, c, d, e, f, g, h, i, j, k;
+        a = 0;
+        b = 1;
+        c = a + b;
+        d = b + c;
+        e = c + d;
+        f = d + e;
+        g = e + f;
+        h = f + g;
+        i = g + h;
+        j = h + i;
+        k = i + j;
+        System.out.println(a + " " + b + " " + c + " " + d + " " + e + " " + f + " " + g + " " + h + " " + i + " \n" +
+                +j + " " + k);
+    }
+
+    // Задание 13. За каждый месяц банк начисляет к сумме вклада 7% от суммы.
+    //Напишите программу, в которую пользователь вводит сумму вклада и количество месяцев. А банк вычисляет конечную
+    // сумму вклада с учетом начисления процентов за каждый месяц.
+    //Для вычисления суммы с учетом процентов используйте цикл for. Пусть сумма вклада будет представлять тип float.
+    public static void calculateDeposit(){ //float программа просит изменить на дабл
+        System.out.print("Введите сумму вклада: ");
+        float deposit = input().nextFloat();
+        System.out.print("Введите срок вклада в месяцах: ");
+        int period = input().nextInt();
+        float sum = 0.0f;
+        sum = (float) ((float) deposit + deposit * 0.07 * period);
+            System.out.println(sum);
+    }
+
+    //Задание 14. Вывести на экран таблицу умножения.
+
+    /* Задание не выполнял. Вижу решение через запрос числа и последующий вывод через System.out.println с помощью
+    ф-ции switch case String-го значения таблицы. Например, на вывод поставить при запросе числа 2: 2х0=0: 2x1=2 и тд
+     */
 
 }
